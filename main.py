@@ -5,6 +5,10 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/", methods=["GET"])
+def home():
+    return "API läuft"
+    
 @app.route('/quote', methods=['GET'])
 def quote():
     ticker = request.args.get('ticker')
