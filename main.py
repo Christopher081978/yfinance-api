@@ -12,7 +12,7 @@ def quote():
     interval = request.args.get('interval', '1d')
 
     if not ticker:
-        return jsonify({"error": "Ticker ist erforderlich"}), 400
+        return jsonify({"error": "Ticker erforderlich"}), 400
 
     try:
         data = yf.Ticker(ticker).history(period=period, interval=interval)
